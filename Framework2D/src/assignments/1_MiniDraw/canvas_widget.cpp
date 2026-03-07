@@ -4,7 +4,9 @@
 #include <iostream>
 
 #include "imgui.h"
+#include "shapes/ellipse.h"
 #include "shapes/line.h"
+#include "shapes/polygon.h"
 #include "shapes/rect.h"
 
 namespace USTC_CG
@@ -12,9 +14,10 @@ namespace USTC_CG
 void Canvas::draw()
 {
     draw_background();
-    // HW1_TODO: more interaction events
     if (is_hovered_ && ImGui::IsMouseClicked(ImGuiMouseButton_Left))
         mouse_click_event();
+    if (is_hovered_ && ImGui::IsMouseClicked(ImGuiMouseButton_Right))
+        mouse_right_click_event();
     mouse_move_event();
     if (!ImGui::IsMouseDown(ImGuiMouseButton_Left))
         mouse_release_event();
@@ -54,7 +57,17 @@ void Canvas::set_rect()
     shape_type_ = kRect;
 }
 
-// HW1_TODO: more shape types, implements
+void Canvas::set_ellipse()
+{
+    draw_status_ = false;
+    shape_type_ = kEllipse;
+}
+
+void Canvas::set_polygon()
+{
+    draw_status_ = false;
+    shape_type_ = kPolygon;
+}
 
 void Canvas::clear_shape_list()
 {
@@ -100,39 +113,67 @@ void Canvas::draw_shapes()
 
 void Canvas::mouse_click_event()
 {
-    // HW1_TODO: Drawing rule for more primitives
+    ImVec2 pos = mouse_pos_in_canvas();
+
     if (!draw_status_)
     {
         draw_status_ = true;
-        start_point_ = end_point_ = mouse_pos_in_canvas();
+        start_point_ = end_point_ = pos;
         switch (shape_type_)
         {
             case USTC_CG::Canvas::kDefault:
-            {
                 break;
-            }
             case USTC_CG::Canvas::kLine:
-            {
                 current_shape_ = std::make_shared<Line>(
                     start_point_.x, start_point_.y, end_point_.x, end_point_.y);
                 break;
-            }
             case USTC_CG::Canvas::kRect:
-            {
                 current_shape_ = std::make_shared<Rect>(
                     start_point_.x, start_point_.y, end_point_.x, end_point_.y);
                 break;
-            }
-            // HW1_TODO: case USTC_CG::Canvas::kEllipse:
-            default: break;
+            case USTC_CG::Canvas::kEllipse:
+                current_shape_ = std::make_shared<Ellipse>(
+                    start_point_.x, start_point_.y, end_point_.x, end_point_.y);
+                break;
+            case USTC_CG::Canvas::kPolygon:
+                current_shape_ = std::make_shared<Polygon>(pos.x, pos.y);
+                break;
+            default:
+                break;
         }
     }
     else
     {
-        draw_status_ = false;
-        if (current_shape_)
+        if (shape_type_ == USTC_CG::Canvas::kPolygon)
         {
-            shape_list_.push_back(current_shape_);
+            if (current_shape_)
+                current_shape_->add_control_point(pos.x, pos.y);
+        }
+        else
+        {
+            draw_status_ = false;
+            if (current_shape_)
+            {
+                shape_list_.push_back(current_shape_);
+                current_shape_.reset();
+            }
+        }
+    }
+}
+
+void Canvas::mouse_right_click_event()
+{
+    if (draw_status_ && shape_type_ == USTC_CG::Canvas::kPolygon && current_shape_)
+    {
+        auto* poly = dynamic_cast<Polygon*>(current_shape_.get());
+        if (poly)
+        {
+            if (poly->point_count() >= 2)
+            {
+                poly->close();
+                shape_list_.push_back(current_shape_);
+            }
+            draw_status_ = false;
             current_shape_.reset();
         }
     }
