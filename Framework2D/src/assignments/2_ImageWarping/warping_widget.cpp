@@ -1,11 +1,82 @@
 #include "warping_widget.h"
 
+#include "warper/IDW_warper.h"
+#include "warper/RBF_warper.h"
+
+#include <algorithm>
+#include <array>
 #include <cmath>
 #include <iostream>
+#include <memory>
+#include <tuple>
 
 namespace USTC_CG
 {
 using uchar = unsigned char;
+
+namespace
+{
+void accumulate_splat(
+    std::vector<double>& accum,
+    std::vector<double>& weight_sum,
+    int width,
+    int height,
+    int channels,
+    double x,
+    double y,
+    const std::vector<uchar>& color)
+{
+    if (x < 0.0 || x > width - 1 || y < 0.0 || y > height - 1)
+    {
+        return;
+    }
+
+    const int x0 = static_cast<int>(std::floor(x));
+    const int y0 = static_cast<int>(std::floor(y));
+    const int x1 = std::min(x0 + 1, width - 1);
+    const int y1 = std::min(y0 + 1, height - 1);
+    const double tx = x - x0;
+    const double ty = y - y0;
+
+    const std::array<std::tuple<int, int, double>, 4> samples = {
+        std::tuple<int, int, double> { x0, y0, (1.0 - tx) * (1.0 - ty) },
+        std::tuple<int, int, double> { x1, y0, tx * (1.0 - ty) },
+        std::tuple<int, int, double> { x0, y1, (1.0 - tx) * ty },
+        std::tuple<int, int, double> { x1, y1, tx * ty },
+    };
+
+    for (const auto& [sx, sy, weight] : samples)
+    {
+        if (weight <= 0.0)
+        {
+            continue;
+        }
+
+        const size_t pixel_index =
+            (static_cast<size_t>(sy) * static_cast<size_t>(width) +
+             static_cast<size_t>(sx));
+        weight_sum[pixel_index] += weight;
+
+        const size_t accum_index = pixel_index * static_cast<size_t>(channels);
+        for (int c = 0; c < channels; ++c)
+        {
+            accum[accum_index + static_cast<size_t>(c)] +=
+                weight * static_cast<double>(color[c]);
+        }
+    }
+}
+
+std::vector<Warper::Point> to_warp_points(const std::vector<ImVec2>& points)
+{
+    std::vector<Warper::Point> result;
+    result.reserve(points.size());
+    for (const ImVec2& point : points)
+    {
+        result.push_back({ static_cast<double>(point.x), static_cast<double>(point.y) });
+    }
+    return result;
+}
+}  // namespace
 
 WarpingWidget::WarpingWidget(const std::string& label, const std::string& filename)
     : ImageWidget(label, filename)
@@ -108,14 +179,11 @@ void WarpingWidget::gray_scale()
 }
 void WarpingWidget::warping()
 {
-    // HW2_TODO: You should implement your own warping function that interpolate
-    // the selected points.
-    // Please design a class for such warping operations, utilizing the
-    // encapsulation, inheritance, and polymorphism features of C++. 
+    const auto source_points = to_warp_points(start_points_);
+    const auto target_points = to_warp_points(end_points_);
+    std::unique_ptr<Warper> forward_warper;
 
-    // Create a new image to store the result
     Image warped_image(*data_);
-    // Initialize the color of result image
     for (int y = 0; y < data_->height(); ++y)
     {
         for (int x = 0; x < data_->width(); ++x)
@@ -156,19 +224,88 @@ void WarpingWidget::warping()
         }
         case kIDW:
         {
-            // HW2_TODO: Implement the IDW warping
-            // use selected points start_points_, end_points_ to construct the map
-            std::cout << "IDW not implemented." << std::endl;
+            if (source_points.empty() || source_points.size() != target_points.size())
+            {
+                return;
+            }
+            forward_warper =
+                std::make_unique<IDWWarper>(source_points, target_points);
             break;
         }
         case kRBF:
         {
-            // HW2_TODO: Implement the RBF warping
-            // use selected points start_points_, end_points_ to construct the map
-            std::cout << "RBF not implemented." << std::endl;
+            if (source_points.empty() || source_points.size() != target_points.size())
+            {
+                return;
+            }
+            forward_warper =
+                std::make_unique<RBFWarper>(source_points, target_points);
             break;
         }
         default: break;
+    }
+
+    if (forward_warper)
+    {
+        const Image source_image(*data_);
+        const int width = data_->width();
+        const int height = data_->height();
+        const int channels = data_->channels();
+        std::vector<double> accum(
+            static_cast<size_t>(width) * static_cast<size_t>(height) *
+                static_cast<size_t>(channels),
+            0.0);
+        std::vector<double> weight_sum(
+            static_cast<size_t>(width) * static_cast<size_t>(height), 0.0);
+
+        for (int y = 0; y < data_->height(); ++y)
+        {
+            for (int x = 0; x < data_->width(); ++x)
+            {
+                const Warper::Point mapped = forward_warper->warp(
+                    { static_cast<double>(x), static_cast<double>(y) });
+                if (mapped.x >= 0.0 && mapped.x <= width - 1 && mapped.y >= 0.0 &&
+                    mapped.y <= height - 1)
+                {
+                    accumulate_splat(
+                        accum,
+                        weight_sum,
+                        width,
+                        height,
+                        channels,
+                        mapped.x,
+                        mapped.y,
+                        source_image.get_pixel(x, y));
+                }
+            }
+        }
+
+        for (int y = 0; y < height; ++y)
+        {
+            for (int x = 0; x < width; ++x)
+            {
+                const size_t pixel_index =
+                    static_cast<size_t>(y) * static_cast<size_t>(width) +
+                    static_cast<size_t>(x);
+                if (weight_sum[pixel_index] <= 1e-12)
+                {
+                    continue;
+                }
+
+                std::vector<uchar> color(channels, 0);
+                const size_t accum_index = pixel_index * static_cast<size_t>(channels);
+                for (int c = 0; c < channels; ++c)
+                {
+                    color[c] = static_cast<uchar>(std::clamp(
+                        std::round(
+                            accum[accum_index + static_cast<size_t>(c)] /
+                            weight_sum[pixel_index]),
+                        0.0,
+                        255.0));
+                }
+                warped_image.set_pixel(x, y, color);
+            }
+        }
     }
 
     *data_ = std::move(warped_image);

@@ -1,0 +1,18 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/cmake_install.cmake",
+		"C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/cmake_install.cmake",
+		"C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/cmake_install.cmake",
+		"C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src/cmake_install.cmake",
+		"C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/docs/cmake_install.cmake",
+		"C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/cmake_install.cmake",
+		"C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/common/cmake_install.cmake",
+		"C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/demo/cmake_install.cmake",
+		"C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/cmake_install.cmake",
+		"C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/1_MiniDraw/cmake_install.cmake",
+		"C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/2_ImageWarping/cmake_install.cmake",
+		"C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/3_PoissonImageEditing/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,326 @@
+[
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe  @CMakeFiles/glad.dir/includes_C.rsp -g -o CMakeFiles\\glad.dir\\glad\\src\\glad.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glad\\src\\glad.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glad/src/glad.c",
+  "output": "third_party/CMakeFiles/glad.dir/glad/src/glad.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/imgui.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\imgui.dir\\ImGuiFileDialog\\ImGuiFileDialog.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\ImGuiFileDialog\\ImGuiFileDialog.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/ImGuiFileDialog/ImGuiFileDialog.cpp",
+  "output": "third_party/CMakeFiles/imgui.dir/ImGuiFileDialog/ImGuiFileDialog.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/imgui.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\imgui.dir\\imgui\\backends\\imgui_impl_glfw.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\imgui\\backends\\imgui_impl_glfw.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/imgui/backends/imgui_impl_glfw.cpp",
+  "output": "third_party/CMakeFiles/imgui.dir/imgui/backends/imgui_impl_glfw.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/imgui.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\imgui.dir\\imgui\\backends\\imgui_impl_opengl3.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\imgui\\backends\\imgui_impl_opengl3.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/imgui/backends/imgui_impl_opengl3.cpp",
+  "output": "third_party/CMakeFiles/imgui.dir/imgui/backends/imgui_impl_opengl3.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/imgui.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\imgui.dir\\imgui\\imgui.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\imgui\\imgui.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/imgui/imgui.cpp",
+  "output": "third_party/CMakeFiles/imgui.dir/imgui/imgui.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/imgui.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\imgui.dir\\imgui\\imgui_demo.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\imgui\\imgui_demo.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/imgui/imgui_demo.cpp",
+  "output": "third_party/CMakeFiles/imgui.dir/imgui/imgui_demo.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/imgui.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\imgui.dir\\imgui\\imgui_draw.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\imgui\\imgui_draw.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/imgui/imgui_draw.cpp",
+  "output": "third_party/CMakeFiles/imgui.dir/imgui/imgui_draw.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/imgui.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\imgui.dir\\imgui\\imgui_tables.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\imgui\\imgui_tables.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/imgui/imgui_tables.cpp",
+  "output": "third_party/CMakeFiles/imgui.dir/imgui/imgui_tables.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/imgui.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\imgui.dir\\imgui\\imgui_widgets.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\imgui\\imgui_widgets.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/imgui/imgui_widgets.cpp",
+  "output": "third_party/CMakeFiles/imgui.dir/imgui/imgui_widgets.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\context.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\context.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/context.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/context.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\init.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\init.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/init.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/init.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\input.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\input.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/input.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/input.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\monitor.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\monitor.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/monitor.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/monitor.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\platform.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\platform.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/platform.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/platform.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\vulkan.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\vulkan.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/vulkan.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/vulkan.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\window.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\window.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/window.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/window.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\egl_context.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\egl_context.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/egl_context.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/egl_context.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\osmesa_context.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\osmesa_context.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/osmesa_context.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\null_init.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\null_init.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/null_init.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/null_init.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\null_monitor.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\null_monitor.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/null_monitor.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\null_window.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\null_window.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/null_window.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/null_window.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\null_joystick.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\null_joystick.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/null_joystick.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\win32_module.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\win32_module.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/win32_module.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/win32_module.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\win32_time.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\win32_time.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/win32_time.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/win32_time.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\win32_thread.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\win32_thread.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/win32_thread.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/win32_thread.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\win32_init.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\win32_init.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/win32_init.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/win32_init.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\win32_joystick.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\win32_joystick.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/win32_joystick.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/win32_joystick.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\win32_monitor.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\win32_monitor.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/win32_monitor.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/win32_monitor.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\win32_window.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\win32_window.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/win32_window.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/win32_window.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/third_party/glfw/src",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\cc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE @CMakeFiles/glfw.dir/includes_C.rsp -g -std=c99 -Wall -o CMakeFiles\\glfw.dir\\wgl_context.c.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\third_party\\glfw\\src\\wgl_context.c",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/third_party/glfw/src/wgl_context.c",
+  "output": "third_party/glfw/src/CMakeFiles/glfw.dir/wgl_context.c.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/common",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/common.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\common.dir\\image_widget.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\common\\image_widget.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/common/image_widget.cpp",
+  "output": "src/common/CMakeFiles/common.dir/image_widget.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/common",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/common.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\common.dir\\window.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\common\\window.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/common/window.cpp",
+  "output": "src/common/CMakeFiles/common.dir/window.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/demo",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/demo_hello_world.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\demo_hello_world.dir\\demo_hello_world.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\demo\\demo_hello_world.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/demo/demo_hello_world.cpp",
+  "output": "src/demo/CMakeFiles/demo_hello_world.dir/demo_hello_world.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/demo",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/demo.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\demo.dir\\demo.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\demo\\demo.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/demo/demo.cpp",
+  "output": "src/demo/CMakeFiles/demo.dir/demo.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/demo",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/demo.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\demo.dir\\demo_window.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\demo\\demo_window.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/demo/demo_window.cpp",
+  "output": "src/demo/CMakeFiles/demo.dir/demo_window.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/1_MiniDraw",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/1_MiniDraw.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\1_MiniDraw.dir\\canvas_widget.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\1_MiniDraw\\canvas_widget.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/1_MiniDraw/canvas_widget.cpp",
+  "output": "src/assignments/1_MiniDraw/CMakeFiles/1_MiniDraw.dir/canvas_widget.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/1_MiniDraw",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/1_MiniDraw.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\1_MiniDraw.dir\\main.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\1_MiniDraw\\main.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/1_MiniDraw/main.cpp",
+  "output": "src/assignments/1_MiniDraw/CMakeFiles/1_MiniDraw.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/1_MiniDraw",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/1_MiniDraw.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\1_MiniDraw.dir\\minidraw_window.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\1_MiniDraw\\minidraw_window.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/1_MiniDraw/minidraw_window.cpp",
+  "output": "src/assignments/1_MiniDraw/CMakeFiles/1_MiniDraw.dir/minidraw_window.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/1_MiniDraw",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/1_MiniDraw.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\1_MiniDraw.dir\\shapes\\ellipse.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\1_MiniDraw\\shapes\\ellipse.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/1_MiniDraw/shapes/ellipse.cpp",
+  "output": "src/assignments/1_MiniDraw/CMakeFiles/1_MiniDraw.dir/shapes/ellipse.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/1_MiniDraw",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/1_MiniDraw.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\1_MiniDraw.dir\\shapes\\line.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\1_MiniDraw\\shapes\\line.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/1_MiniDraw/shapes/line.cpp",
+  "output": "src/assignments/1_MiniDraw/CMakeFiles/1_MiniDraw.dir/shapes/line.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/1_MiniDraw",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/1_MiniDraw.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\1_MiniDraw.dir\\shapes\\polygon.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\1_MiniDraw\\shapes\\polygon.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/1_MiniDraw/shapes/polygon.cpp",
+  "output": "src/assignments/1_MiniDraw/CMakeFiles/1_MiniDraw.dir/shapes/polygon.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/1_MiniDraw",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/1_MiniDraw.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\1_MiniDraw.dir\\shapes\\rect.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\1_MiniDraw\\shapes\\rect.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/1_MiniDraw/shapes/rect.cpp",
+  "output": "src/assignments/1_MiniDraw/CMakeFiles/1_MiniDraw.dir/shapes/rect.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/2_ImageWarping",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE -DDATA_PATH=\\\"C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/../Homeworks/2_image_warping/data\\\" @CMakeFiles/2_ImageWarping.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\2_ImageWarping.dir\\main.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\2_ImageWarping\\main.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/2_ImageWarping/main.cpp",
+  "output": "src/assignments/2_ImageWarping/CMakeFiles/2_ImageWarping.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/2_ImageWarping",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE -DDATA_PATH=\\\"C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/../Homeworks/2_image_warping/data\\\" @CMakeFiles/2_ImageWarping.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\2_ImageWarping.dir\\warper\\IDW_warper.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\2_ImageWarping\\warper\\IDW_warper.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/2_ImageWarping/warper/IDW_warper.cpp",
+  "output": "src/assignments/2_ImageWarping/CMakeFiles/2_ImageWarping.dir/warper/IDW_warper.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/2_ImageWarping",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE -DDATA_PATH=\\\"C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/../Homeworks/2_image_warping/data\\\" @CMakeFiles/2_ImageWarping.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\2_ImageWarping.dir\\warper\\RBF_warper.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\2_ImageWarping\\warper\\RBF_warper.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/2_ImageWarping/warper/RBF_warper.cpp",
+  "output": "src/assignments/2_ImageWarping/CMakeFiles/2_ImageWarping.dir/warper/RBF_warper.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/2_ImageWarping",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE -DDATA_PATH=\\\"C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/../Homeworks/2_image_warping/data\\\" @CMakeFiles/2_ImageWarping.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\2_ImageWarping.dir\\warper\\warper.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\2_ImageWarping\\warper\\warper.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/2_ImageWarping/warper/warper.cpp",
+  "output": "src/assignments/2_ImageWarping/CMakeFiles/2_ImageWarping.dir/warper/warper.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/2_ImageWarping",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE -DDATA_PATH=\\\"C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/../Homeworks/2_image_warping/data\\\" @CMakeFiles/2_ImageWarping.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\2_ImageWarping.dir\\warping_widget.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\2_ImageWarping\\warping_widget.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/2_ImageWarping/warping_widget.cpp",
+  "output": "src/assignments/2_ImageWarping/CMakeFiles/2_ImageWarping.dir/warping_widget.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/2_ImageWarping",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE -DDATA_PATH=\\\"C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/../Homeworks/2_image_warping/data\\\" @CMakeFiles/2_ImageWarping.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\2_ImageWarping.dir\\warping_window.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\2_ImageWarping\\warping_window.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/2_ImageWarping/warping_window.cpp",
+  "output": "src/assignments/2_ImageWarping/CMakeFiles/2_ImageWarping.dir/warping_window.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/3_PoissonImageEditing",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE -DDATA_PATH=\\\"C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/../Homeworks/3_poisson_image_editing/data\\\" @CMakeFiles/3_PoissonImageEditing.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\3_PoissonImageEditing.dir\\main.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\3_PoissonImageEditing\\main.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/3_PoissonImageEditing/main.cpp",
+  "output": "src/assignments/3_PoissonImageEditing/CMakeFiles/3_PoissonImageEditing.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/3_PoissonImageEditing",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE -DDATA_PATH=\\\"C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/../Homeworks/3_poisson_image_editing/data\\\" @CMakeFiles/3_PoissonImageEditing.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\3_PoissonImageEditing.dir\\poisson_window.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\3_PoissonImageEditing\\poisson_window.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/3_PoissonImageEditing/poisson_window.cpp",
+  "output": "src/assignments/3_PoissonImageEditing/CMakeFiles/3_PoissonImageEditing.dir/poisson_window.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/3_PoissonImageEditing",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE -DDATA_PATH=\\\"C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/../Homeworks/3_poisson_image_editing/data\\\" @CMakeFiles/3_PoissonImageEditing.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\3_PoissonImageEditing.dir\\shapes\\line.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\3_PoissonImageEditing\\shapes\\line.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/3_PoissonImageEditing/shapes/line.cpp",
+  "output": "src/assignments/3_PoissonImageEditing/CMakeFiles/3_PoissonImageEditing.dir/shapes/line.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/3_PoissonImageEditing",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE -DDATA_PATH=\\\"C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/../Homeworks/3_poisson_image_editing/data\\\" @CMakeFiles/3_PoissonImageEditing.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\3_PoissonImageEditing.dir\\shapes\\rect.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\3_PoissonImageEditing\\shapes\\rect.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/3_PoissonImageEditing/shapes/rect.cpp",
+  "output": "src/assignments/3_PoissonImageEditing/CMakeFiles/3_PoissonImageEditing.dir/shapes/rect.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/3_PoissonImageEditing",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE -DDATA_PATH=\\\"C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/../Homeworks/3_poisson_image_editing/data\\\" @CMakeFiles/3_PoissonImageEditing.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\3_PoissonImageEditing.dir\\source_image_widget.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\3_PoissonImageEditing\\source_image_widget.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/3_PoissonImageEditing/source_image_widget.cpp",
+  "output": "src/assignments/3_PoissonImageEditing/CMakeFiles/3_PoissonImageEditing.dir/source_image_widget.cpp.obj"
+},
+{
+  "directory": "C:/Users/funhxj/Desktop/USTC_CG_26/out/Framework2D-mingw/src/assignments/3_PoissonImageEditing",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE -DDATA_PATH=\\\"C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/../Homeworks/3_poisson_image_editing/data\\\" @CMakeFiles/3_PoissonImageEditing.dir/includes_CXX.rsp -g -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles\\3_PoissonImageEditing.dir\\target_image_widget.cpp.obj -c C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\Framework2D\\src\\assignments\\3_PoissonImageEditing\\target_image_widget.cpp",
+  "file": "C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/src/assignments/3_PoissonImageEditing/target_image_widget.cpp",
+  "output": "src/assignments/3_PoissonImageEditing/CMakeFiles/3_PoissonImageEditing.dir/target_image_widget.cpp.obj"
+}
+]
