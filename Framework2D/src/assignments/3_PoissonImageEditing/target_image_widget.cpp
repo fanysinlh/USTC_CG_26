@@ -1,6 +1,10 @@
 #include "target_image_widget.h"
 
+#include <algorithm>
 #include <cmath>
+#include <vector>
+
+#include "seamless_clone.h"
 
 namespace USTC_CG
 {
@@ -13,7 +17,10 @@ TargetImageWidget::TargetImageWidget(
 {
     if (data_)
         back_up_ = std::make_shared<Image>(*data_);
+    seamless_clone_ = std::make_unique<SeamlessClone>();
 }
+
+TargetImageWidget::~TargetImageWidget() noexcept = default;
 
 void TargetImageWidget::draw()
 {
@@ -45,6 +52,12 @@ void TargetImageWidget::draw()
 void TargetImageWidget::set_source(std::shared_ptr<SourceImageWidget> source)
 {
     source_image_ = source;
+    invalidate_precompute();
+    if (seamless_clone_ && source_image_)
+    {
+        seamless_clone_->set_source_image(source_image_->get_data());
+        seamless_clone_->set_region_mask(source_image_->get_region_mask());
+    }
 }
 
 void TargetImageWidget::set_realtime(bool flag)
@@ -66,6 +79,19 @@ void TargetImageWidget::set_paste()
 void TargetImageWidget::set_seamless()
 {
     clone_type_ = kSeamless;
+}
+
+void TargetImageWidget::set_precompute(bool flag)
+{
+    use_precompute_ = flag;
+    if (seamless_clone_)
+        seamless_clone_->set_precompute(flag);
+}
+
+void TargetImageWidget::invalidate_precompute()
+{
+    if (seamless_clone_)
+        seamless_clone_->invalidate_precompute();
 }
 
 void TargetImageWidget::clone()
@@ -119,10 +145,22 @@ void TargetImageWidget::clone()
         }
         case USTC_CG::TargetImageWidget::kSeamless:
         {
-            // HW3_TODO: You should implement your own seamless cloning. For
-            // each pixel in the selected region, calculate the final RGB color
-            // by solving Poisson Equations.
             restore();
+            const int offset_x =
+                static_cast<int>(mouse_position_.x) -
+                static_cast<int>(source_image_->get_position().x);
+            const int offset_y =
+                static_cast<int>(mouse_position_.y) -
+                static_cast<int>(source_image_->get_position().y);
+            if (seamless_clone_ == nullptr)
+                break;
+
+            seamless_clone_->set_source_image(source_image_->get_data());
+            seamless_clone_->set_target_image(back_up_);
+            seamless_clone_->set_region_mask(mask);
+            seamless_clone_->set_precompute(use_precompute_);
+            seamless_clone_->set_offset(offset_x, offset_y);
+            seamless_clone_->solve(data_);
 
             break;
         }

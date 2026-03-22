@@ -4,8 +4,19 @@
 
 #include <iostream>
 
+#ifndef DATA_PATH
+#define DATA_PATH "."
+#endif
+
 namespace USTC_CG
 {
+namespace
+{
+bool g_selectable = false;
+bool g_realtime = false;
+bool g_precompute = true;
+}  // namespace
+
 PoissonWindow::PoissonWindow(const std::string& window_name)
     : Window(window_name)
 {
@@ -66,21 +77,26 @@ void PoissonWindow::draw_toolbar()
 
         ImGui::Separator();
 
-        static bool selectable = false;
-        ImGui::Checkbox("Select", &selectable);
+        ImGui::Checkbox("Select", &g_selectable);
         add_tooltips(
             "On: Enable region selection in the source image. Drag left mouse "
             "to select rectangle (default) in the source.");
         if (p_source_)
-            p_source_->enable_selecting(selectable);
-        static bool realtime = false;
-        ImGui::Checkbox("Realtime", &realtime);
+            p_source_->enable_selecting(g_selectable);
+        ImGui::Checkbox("Realtime", &g_realtime);
         add_tooltips(
             "On: Enable realtime cloning in the target image, which means that "
             "you can drag the mouse and the cloning would update along the "
             "mouse.");
         if (p_target_)
-            p_target_->set_realtime(realtime);
+            p_target_->set_realtime(g_realtime);
+
+        ImGui::Checkbox("Precompute", &g_precompute);
+        add_tooltips(
+            "On: Reuse the precomputed sparse system for seamless cloning to "
+            "improve realtime performance.");
+        if (p_target_)
+            p_target_->set_precompute(g_precompute);
 
         ImGui::Separator();
 
@@ -91,8 +107,14 @@ void PoissonWindow::draw_toolbar()
         add_tooltips(
             "Press this button and then click in the target image, to "
             "clone the selected region to the target image.");
-        // HW3_TODO: You may add more items in the menu for the different types
-        // of Poisson editing.
+
+        if (ImGui::MenuItem("Seamless") && p_target_ && p_source_)
+        {
+            p_target_->set_seamless();
+        }
+        add_tooltips(
+            "Press this button and then click in the target image, to "
+            "seamlessly clone the selected region to the target image.");
 
         ImGui::EndMainMenuBar();
     }
@@ -152,6 +174,8 @@ void PoissonWindow::draw_open_target_image_file_dialog()
                 ImGuiFileDialog::Instance()->GetFilePathName();
             std::string label = filePathName;
             p_target_ = std::make_shared<TargetImageWidget>(label, filePathName);
+            p_target_->set_realtime(g_realtime);
+            p_target_->set_precompute(g_precompute);
             if (p_source_)
                 p_target_->set_source(p_source_);
         }
@@ -178,6 +202,7 @@ void PoissonWindow::draw_open_source_image_file_dialog()
                 ImGuiFileDialog::Instance()->GetFilePathName();
             std::string label = filePathName;
             p_source_ = std::make_shared<SourceImageWidget>(label, filePathName);
+            p_source_->enable_selecting(g_selectable);
             // Bind the source image to the target
             if (p_source_)
                 p_target_->set_source(p_source_);
