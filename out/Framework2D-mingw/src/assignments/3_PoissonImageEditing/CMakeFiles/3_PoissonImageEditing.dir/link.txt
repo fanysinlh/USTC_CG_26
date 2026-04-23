@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\3_PoissonImageEditing.dir/objects.a
+C:\PROGRA~1\mingw64\bin\ar.exe qc CMakeFiles\3_PoissonImageEditing.dir/objects.a @CMakeFiles\3_PoissonImageEditing.dir\objects1.rsp
+C:\PROGRA~1\mingw64\bin\C__~1.EXE -g -Wl,--whole-archive CMakeFiles\3_PoissonImageEditing.dir/objects.a -Wl,--no-whole-archive -o C:\Users\funhxj\Desktop\USTC_CG_26\Framework2D\bin\3_PoissonImageEditing_d.exe -Wl,--out-implib,C:\Users\funhxj\Desktop\USTC_CG_26\Framework2D\libs\lib3_PoissonImageEditing_d.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\3_PoissonImageEditing.dir\linkLibs.rsp

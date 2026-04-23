@@ -1,0 +1,1 @@
+ C:/Users/funhxj/Desktop/USTC_CG_26/Framework2D/libs/libcommon_d.a ../../../third_party/libglad.a ../../../third_party/libimgui.a ../../../third_party/glfw/src/libglfw3.a -lpthread -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
