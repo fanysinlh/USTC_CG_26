@@ -1,6 +1,7 @@
 # 6. ARAP参数化 ARAP Parameterzation
 
 > 作业步骤：
+> 
 > - 查看[ARAP作业文档](arap_parameterization/README.md)
 > - 在[项目目录](../../Framework3D/)中编写作业代码
 > - 按照[作业规范](../README.md)提交作业
@@ -28,8 +29,6 @@
   - 探究 ARAP 参数化中三角形翻转的成因，验证论文中后处理方法的有效性
   - 其他合理的探索性研究
 
-
-
 ## 目的
 
 - 继续学习网格数据结构和编程
@@ -38,16 +37,15 @@
 - 了解非线性优化
 - 理解并实现（二阶）矩阵的 SVD 分解
 
-
 ## 提供的材料
 
 依照上述要求和方法，根据说明文档`(1) documents`和作业框架`(2) Framework3D`的内容进行练习。
 
-### (1) 说明文档 `arap_parameterizatsion` [->](arap_parameterization/) 
+### (1) 说明文档 `arap_parameterizatsion` [->](arap_parameterization/)
 
 本次作业的要求说明和一些辅助资料
 
-### (2) 作业项目 `Framework3D` [->](../../Framework3D/) 
+### (2) 作业项目 `Framework3D` [->](../../Framework3D/)
 
 作业的基础代码框架
 
