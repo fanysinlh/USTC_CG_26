@@ -115,7 +115,28 @@ class ViewTransformer(nn.Module):
         # Variables you must define (used downstream):
         #   ray_tokens, patch_h, patch_w, ray_token_pos
         # =====================================================
-        raise NotImplementedError("HW8_TODO: Ray Bundle Embedding")
+        batch_size, height, width, _ = ray_map.shape
+        patch_size = self.config.patch_size
+        patch_h = height // patch_size
+        patch_w = width // patch_size
+
+        ray_map_pe = self.vdir_pe(ray_map)
+        ray_patches = rearrange(
+            ray_map_pe,
+            'b (h1 p1) (w1 p2) c -> b (h1 w1) (c p1 p2)',
+            p1=patch_size,
+            p2=patch_size,
+        )
+        ray_tokens = self.ray_map_encoder_norm(self.ray_map_encoder(ray_patches))
+        ray_tokens = ray_tokens + self.ray_map_patch_token.expand(batch_size, ray_tokens.size(1), -1)
+
+        ray_token_pos = camera_o[:, None, :].expand(-1, patch_h * patch_w, -1).repeat(1, 1, 3)
+
+        if self.config.pe_type == 'nerf':
+            ray_pos_emb = self.token_pos_pe_norm(self.pe_token_proj(self.pos_pe(ray_token_pos)))
+            tri_pos_emb = self.token_pos_pe_norm(self.pe_token_proj(self.pos_pe(tri_pos)))
+            ray_tokens = ray_tokens + ray_pos_emb
+            tri_tokens = tri_tokens + tri_pos_emb
 
         # do per-ray attention
         if self.config.use_dpt_decoder:

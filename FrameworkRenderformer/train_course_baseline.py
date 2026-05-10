@@ -69,6 +69,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--vn_pe_num_freqs", type=int, default=6)
     parser.add_argument("--no_vn", action="store_true")
     parser.add_argument("--ffn_opt", choices=["checkpoint", "none"], default="checkpoint")
+    parser.add_argument("--encoding_granularity", choices=["triangle", "object"], default="triangle")
 
     parser.add_argument("--loss_type", choices=["log_l1", "l1", "mse"], default="log_l1")
     parser.add_argument("--use_lpips", action="store_true")
@@ -156,6 +157,12 @@ def save_preview(prediction: torch.Tensor, target: torch.Tensor, save_path: Path
 def save_json(save_path: Path, content: Dict[str, Any]) -> None:
     with save_path.open("w", encoding="utf-8") as file:
         json.dump(content, file, indent=2, ensure_ascii=True)
+
+
+def compute_psnr(prediction: torch.Tensor, target: torch.Tensor, max_value: float = 1.0) -> torch.Tensor:
+    mse = torch.mean((prediction.float() - target.float()) ** 2)
+    mse = torch.clamp(mse, min=1e-12)
+    return 10.0 * torch.log10(torch.tensor(max_value ** 2, device=mse.device, dtype=mse.dtype) / mse)
 
 
 def next_batch(data_iterator, dataloader):
@@ -264,7 +271,10 @@ def main() -> None:
         use_vn_encoder=not args.no_vn,
         ffn_opt=args.ffn_opt,
     )
-    model = CourseRenderFormerWrapper(config).to(device)
+    model = CourseRenderFormerWrapper(
+        config,
+        encoding_granularity=args.encoding_granularity,
+    ).to(device)
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
     scheduler = build_scheduler(optimizer, warmup_steps=args.warmup_steps, total_steps=args.max_steps)
@@ -287,6 +297,7 @@ def main() -> None:
     data_iterator = iter(dataloader)
     start_time = time.time()
     global_step = start_step
+    best_psnr = float("-inf")
 
     while global_step < args.max_steps:
         optimizer.zero_grad(set_to_none=True)
@@ -296,6 +307,7 @@ def main() -> None:
             "total_loss": 0.0,
             "base_loss": 0.0,
             "lpips_loss": 0.0,
+            "psnr": 0.0,
         }
         latest_prediction = None
         latest_target = None
@@ -315,6 +327,7 @@ def main() -> None:
             with autocast_context:
                 prediction = model(batch)
                 loss, metrics = criterion(prediction, target)
+                batch_psnr = compute_psnr(torch.clamp(prediction, 0.0, 1.0), torch.clamp(target, 0.0, 1.0))
 
             scaled_loss = loss / args.grad_accum_steps
             if scaler.is_enabled():
@@ -323,7 +336,10 @@ def main() -> None:
                 scaled_loss.backward()
 
             for key in step_metrics:
-                step_metrics[key] += float(metrics[key].item())
+                if key == "psnr":
+                    step_metrics[key] += float(batch_psnr.item())
+                else:
+                    step_metrics[key] += float(metrics[key].item())
 
             latest_prediction = prediction.detach()
             latest_target = target.detach()
@@ -343,6 +359,7 @@ def main() -> None:
 
         for key in step_metrics:
             step_metrics[key] /= args.grad_accum_steps
+        best_psnr = max(best_psnr, step_metrics["psnr"])
 
         if global_step == start_step + 1:
             batch_shapes = {
@@ -361,6 +378,8 @@ def main() -> None:
                 f"[Step {global_step:05d}/{args.max_steps}] "
                 f"loss={step_metrics['total_loss']:.6f} "
                 f"base={step_metrics['base_loss']:.6f} "
+                f"psnr={step_metrics['psnr']:.2f} "
+                f"best_psnr={best_psnr:.2f} "
                 f"lr={optimizer.param_groups[0]['lr']:.2e} "
                 f"elapsed={elapsed:.1f}s "
                 f"peak_mem={peak_memory:.2f}GB"

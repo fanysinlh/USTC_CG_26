@@ -88,10 +88,16 @@ class CourseRenderFormerWrapper(nn.Module):
     Minimal wrapper that adapts the repo's RenderFormer model to a plain batch dict.
     """
 
-    def __init__(self, config: RenderFormerConfig, encode_emission_log: bool = True):
+    def __init__(
+        self,
+        config: RenderFormerConfig,
+        encode_emission_log: bool = True,
+        encoding_granularity: str = "triangle",
+    ):
         super().__init__()
         self.config = config
         self.encode_emission_log = encode_emission_log
+        self.encoding_granularity = encoding_granularity
         self.model = RenderFormer(config)
 
     @property
@@ -195,7 +201,25 @@ class CourseRenderFormerWrapper(nn.Module):
     def forward(self, batch: dict[str, torch.Tensor]) -> torch.Tensor:
         tri_pos = batch["tri_pos"].to(device=self.device, dtype=torch.float32)
         tri_mask = batch["tri_mask"].to(device=self.device, dtype=torch.bool)
+        obj_mask = batch.get("obj_mask")
+        if obj_mask is not None:
+            obj_mask = obj_mask.to(device=self.device, dtype=torch.bool)
         batch_size, object_count, triangle_count, _ = tri_pos.shape
+
+        if self.encoding_granularity == "object":
+            tri_pos, tri_mask, tri_normals_batch, tri_patches_batch = self._aggregate_objects(
+                tri_pos=tri_pos,
+                tri_mask=tri_mask,
+                tri_normals=batch.get("tri_normals"),
+                tri_patches=batch.get("tri_patches"),
+                obj_mask=obj_mask,
+            )
+            batch = dict(batch)
+            batch["tri_pos"] = tri_pos
+            batch["tri_mask"] = tri_mask
+            batch["tri_normals"] = tri_normals_batch
+            batch["tri_patches"] = tri_patches_batch
+            batch_size, object_count, triangle_count, _ = tri_pos.shape
 
         tri_vpos_list = tri_pos.reshape(batch_size, object_count * triangle_count, 9)
         valid_mask = tri_mask.reshape(batch_size, object_count * triangle_count)
@@ -260,6 +284,35 @@ class CourseRenderFormerWrapper(nn.Module):
             tf32_view_tf=False,
         )
         return rendered.squeeze(1).contiguous()
+
+    def _aggregate_objects(
+        self,
+        tri_pos: torch.Tensor,
+        tri_mask: torch.Tensor,
+        tri_normals: torch.Tensor | None,
+        tri_patches: torch.Tensor | None,
+        obj_mask: torch.Tensor | None,
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor | None, torch.Tensor | None]:
+        weights = tri_mask.float().unsqueeze(-1)
+        denom = torch.clamp(weights.sum(dim=2, keepdim=True), min=1.0)
+        obj_pos = (tri_pos * weights).sum(dim=2, keepdim=True) / denom
+        obj_tri_mask = tri_mask.any(dim=2, keepdim=True)
+        if obj_mask is not None:
+            obj_tri_mask = obj_tri_mask & obj_mask.unsqueeze(-1)
+
+        obj_normals = None
+        if tri_normals is not None:
+            tri_normals = tri_normals.to(device=self.device, dtype=tri_pos.dtype)
+            obj_normals = (tri_normals * weights).sum(dim=2, keepdim=True) / denom
+
+        obj_patches = None
+        if tri_patches is not None:
+            tri_patches = tri_patches.to(device=self.device, dtype=tri_pos.dtype)
+            patch_weights = tri_mask.float().unsqueeze(-1).unsqueeze(-1).unsqueeze(-1)
+            patch_denom = torch.clamp(patch_weights.sum(dim=2, keepdim=True), min=1.0)
+            obj_patches = (tri_patches * patch_weights).sum(dim=2, keepdim=True) / patch_denom
+
+        return obj_pos, obj_tri_mask, obj_normals, obj_patches
 
 
 def count_parameters(model: nn.Module) -> int:

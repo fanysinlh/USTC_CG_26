@@ -1,0 +1,35 @@
+# Blender 5.1.1 MTL File: 'None'
+# www.blender.org
+
+newmtl Body_SG1
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Body_SG1_baseColor.jpeg
+map_Ke C:/Body_SG1_emissive.jpeg
+map_Bump -bm 1.000000 C:/Body_SG1_normal.jpeg
+
+newmtl Interior_SG
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Interior_SG_baseColor.jpeg
+map_Bump -bm 1.000000 C:/Interior_SG_normal.jpeg
+
+newmtl Windows_SG
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Body_SG1_baseColor.jpeg
+map_Bump -bm 1.000000 C:/Windows_SG_normal.png

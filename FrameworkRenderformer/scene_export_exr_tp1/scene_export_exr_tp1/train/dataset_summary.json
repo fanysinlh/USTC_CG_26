@@ -1,0 +1,20 @@
+{
+  "scene_name": "scene_export_exr",
+  "num_objects": 7,
+  "object_names": [
+    "box1.002",
+    "box2",
+    "Light.001",
+    "plane",
+    "wall0",
+    "wall1",
+    "wall2"
+  ],
+  "num_samples": 300,
+  "image_size": 256,
+  "texture_patch_size": 1,
+  "camera_json": "C:\\Users\\admin\\Desktop\\scene_export_exr\\camera.json",
+  "image_root": "C:\\Users\\admin\\Desktop\\scene_export_exr",
+  "obj_dir": "C:\\Users\\admin\\Desktop\\scene_export_exr\\objs",
+  "materials_json": "C:\\Users\\admin\\Desktop\\scene_export_exr\\materials.json"
+}

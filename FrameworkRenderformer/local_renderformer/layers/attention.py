@@ -191,7 +191,13 @@ class MultiHeadAttention(nn.Module):
             #   5. Reshape: [B, H, N, D] → [B, N, H*D]
             # Hint: torch.matmul, torch.masked_fill, F.softmax
             # ==============================================================
-            raise NotImplementedError("HW8_TODO: Scaled Dot-Product Attention")
+            scale = q.shape[-1] ** -0.5
+            attn_scores = torch.matmul(q, k.transpose(-2, -1)) * scale
+            if attn_mask is not None:
+                attn_scores = attn_scores.masked_fill(~attn_mask, float("-inf"))
+            attn_weights = F.softmax(attn_scores, dim=-1)
+            attn_output = torch.matmul(attn_weights, v)
+            attn_output = attn_output.transpose(1, 2).contiguous().view(bs, src_len, -1)
         elif ATTN == 'flash_attn':
             # self-attn
             if self.is_self_attn:
@@ -637,7 +643,8 @@ class TransformerEncoder(nn.Module):
             #      freqs_to_cos_sin(rope_freqs, head_dim=self.head_dim)
             #   3. Assign results to rope_cos, rope_sin
             # ==============================================================
-            raise NotImplementedError("HW8_TODO: RoPE Computation")
+            rope_freqs = self.rope_emb.get_triangle_freqs(triangle_pos)
+            rope_cos, rope_sin = freqs_to_cos_sin(rope_freqs, head_dim=self.head_dim)
         else:
             rope_cos = rope_sin = None
 
@@ -649,7 +656,19 @@ class TransformerEncoder(nn.Module):
         #     are set, add a skip connection between those layers.
         # Return the processed sequence x.
         # ===============================================================
-        raise NotImplementedError("HW8_TODO: Self-Attention Encoder Forward")
+        skip_residual = None
+        for layer_index, layer in enumerate(self.layers, start=1):
+            if self.encoder_skip_from_layer == layer_index:
+                skip_residual = x
+            x = layer(
+                x,
+                src_key_padding_mask=src_key_padding_mask,
+                rope_cos=rope_cos,
+                rope_sin=rope_sin,
+            )
+            if self.encoder_skip_to_layer == layer_index and skip_residual is not None:
+                x = x + skip_residual
+        return x
 
 
 class TransformerDecoder(nn.Module):
@@ -748,7 +767,10 @@ class TransformerDecoder(nn.Module):
             # Assign to: rope_cos, rope_sin (ray) and
             #            rope_ctx_cos, rope_ctx_sin (triangle)
             # ============================================================
-            raise NotImplementedError("HW8_TODO: Decoder RoPE Computation")
+            ray_rope_freqs = self.rope_emb.get_triangle_freqs(ray_pos)
+            tri_rope_freqs = self.rope_emb.get_triangle_freqs(triangle_pos)
+            rope_cos, rope_sin = freqs_to_cos_sin(ray_rope_freqs, head_dim=self.head_dim)
+            rope_ctx_cos, rope_ctx_sin = freqs_to_cos_sin(tri_rope_freqs, head_dim=self.head_dim)
         else:
             rope_cos = rope_sin = rope_ctx_cos = rope_ctx_sin = None
 
@@ -764,6 +786,20 @@ class TransformerDecoder(nn.Module):
         #     in a list: out_list.append([x]) — DPT expects this format.
         # Return x if no intermediates needed, else return the list.
         # ================================================================
-        raise NotImplementedError("HW8_TODO: Cross-Attention Decoder Forward")
+        for layer_index, layer in enumerate(self.layers):
+            x = layer(
+                x,
+                kv=ctx,
+                src_key_padding_mask=src_key_padding_mask,
+                rope_cos=rope_cos,
+                rope_sin=rope_sin,
+                rope_ctx_cos=rope_ctx_cos,
+                rope_ctx_sin=rope_ctx_sin,
+                force_sdpa=tf32_mode,
+                patch_h=patch_h,
+                patch_w=patch_w,
+            )
+            if layer_index in out_layers:
+                out_list.append([x])
 
         return x if not out_list else out_list

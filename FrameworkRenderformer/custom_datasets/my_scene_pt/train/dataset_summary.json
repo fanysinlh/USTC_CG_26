@@ -1,0 +1,17 @@
+{
+  "scene_name": "my_scene",
+  "num_objects": 4,
+  "object_names": [
+    "amber",
+    "car",
+    "ground",
+    "plane"
+  ],
+  "num_samples": 120,
+  "image_size": 128,
+  "texture_patch_size": 1,
+  "camera_json": "C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\FrameworkRenderformer\\custom_scenes\\my_scene\\camera.json",
+  "image_root": "C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\FrameworkRenderformer\\custom_scenes\\my_scene\\renders",
+  "obj_dir": "C:\\Users\\funhxj\\Desktop\\USTC_CG_26\\FrameworkRenderformer\\custom_scenes\\my_scene\\objs",
+  "materials_json": null
+}

@@ -158,7 +158,18 @@ class RenderFormer(nn.Module, PyTorchModelHubMixin):
         #      Different pe_type ('nerf' vs 'rope') require different treatment.
         #   3. Concatenate all tokens into the final sequence.
         # ====================================================
-        raise NotImplementedError("HW8_TODO: Triangle Embedding")
+        reg_tokens = self.reg_tokens.expand(batch_size, -1, -1)
+        tri_token = self.tri_token.expand(batch_size, tri_vpos_list.size(1), -1)
+
+        if self.config.pe_type == 'nerf':
+            tri_pos_emb = self.tri_encoding_norm(self.tri_encoding_proj(self.tri_vpos_pe(tri_vpos_list)))
+            tri_seq = tri_pos_emb + tri_tex_emb + vn_emb + tri_token
+        elif self.config.pe_type == 'rope':
+            tri_seq = tri_tex_emb + vn_emb + tri_token
+        else:
+            raise ValueError(f"Invalid positional encoding type: {self.config.pe_type}")
+
+        seq = torch.cat([reg_tokens, tri_seq], dim=1)
 
         # pad triangle pos (for RoPE) and valid mask (for all)
         # use center pos for RoPE on auxiliary tokens
